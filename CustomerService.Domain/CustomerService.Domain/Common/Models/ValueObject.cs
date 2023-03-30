@@ -1,6 +1,8 @@
-﻿namespace CustomerService.Domain.Common.Models
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace CustomerService.Domain.Common.Models
 {
-    public abstract class ValueObject
+    public abstract class ValueObject: IEquatable<ValueObject>
     {
         public abstract IEnumerable<object> GetEqualityComponents();
 
@@ -25,6 +27,18 @@
         public static bool operator !=(ValueObject left, ValueObject right)
         {
             return !Equals(left, right);
+        }
+
+        public override int GetHashCode()
+        {
+            return GetEqualityComponents()
+                .Select(x => x?.GetHashCode() ?? 0)
+                .Aggregate((x, y) => x ^ y);
+        }
+
+        public bool Equals(ValueObject? other)
+        {
+            return Equals((object?)other);
         }
     }
 }
