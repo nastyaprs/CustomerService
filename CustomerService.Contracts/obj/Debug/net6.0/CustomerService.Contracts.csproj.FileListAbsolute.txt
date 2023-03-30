@@ -1,0 +1,12 @@
+D:\PetProjects\CustomerService\CustomerService.Contracts\bin\Debug\net6.0\CustomerService.Contracts.deps.json
+D:\PetProjects\CustomerService\CustomerService.Contracts\bin\Debug\net6.0\CustomerService.Contracts.dll
+D:\PetProjects\CustomerService\CustomerService.Contracts\bin\Debug\net6.0\CustomerService.Contracts.pdb
+D:\PetProjects\CustomerService\CustomerService.Contracts\obj\Debug\net6.0\CustomerService.Contracts.csproj.AssemblyReference.cache
+D:\PetProjects\CustomerService\CustomerService.Contracts\obj\Debug\net6.0\CustomerService.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+D:\PetProjects\CustomerService\CustomerService.Contracts\obj\Debug\net6.0\CustomerService.Contracts.AssemblyInfoInputs.cache
+D:\PetProjects\CustomerService\CustomerService.Contracts\obj\Debug\net6.0\CustomerService.Contracts.AssemblyInfo.cs
+D:\PetProjects\CustomerService\CustomerService.Contracts\obj\Debug\net6.0\CustomerService.Contracts.csproj.CoreCompileInputs.cache
+D:\PetProjects\CustomerService\CustomerService.Contracts\obj\Debug\net6.0\CustomerService.Contracts.dll
+D:\PetProjects\CustomerService\CustomerService.Contracts\obj\Debug\net6.0\refint\CustomerService.Contracts.dll
+D:\PetProjects\CustomerService\CustomerService.Contracts\obj\Debug\net6.0\CustomerService.Contracts.pdb
+D:\PetProjects\CustomerService\CustomerService.Contracts\obj\Debug\net6.0\ref\CustomerService.Contracts.dll

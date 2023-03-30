@@ -1,0 +1,17 @@
+D:\PetProjects\CustomerService\CustomerService.Infrustructure\bin\Debug\net6.0\CustomerService.Infrustructure.deps.json
+D:\PetProjects\CustomerService\CustomerService.Infrustructure\bin\Debug\net6.0\CustomerService.Infrustructure.dll
+D:\PetProjects\CustomerService\CustomerService.Infrustructure\bin\Debug\net6.0\CustomerService.Infrustructure.pdb
+D:\PetProjects\CustomerService\CustomerService.Infrustructure\bin\Debug\net6.0\CustomerService.Application.dll
+D:\PetProjects\CustomerService\CustomerService.Infrustructure\bin\Debug\net6.0\CustomerService.Domain.dll
+D:\PetProjects\CustomerService\CustomerService.Infrustructure\bin\Debug\net6.0\CustomerService.Application.pdb
+D:\PetProjects\CustomerService\CustomerService.Infrustructure\bin\Debug\net6.0\CustomerService.Domain.pdb
+D:\PetProjects\CustomerService\CustomerService.Infrustructure\obj\Debug\net6.0\CustomerService.Infrustructure.csproj.AssemblyReference.cache
+D:\PetProjects\CustomerService\CustomerService.Infrustructure\obj\Debug\net6.0\CustomerService.Infrustructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\PetProjects\CustomerService\CustomerService.Infrustructure\obj\Debug\net6.0\CustomerService.Infrustructure.AssemblyInfoInputs.cache
+D:\PetProjects\CustomerService\CustomerService.Infrustructure\obj\Debug\net6.0\CustomerService.Infrustructure.AssemblyInfo.cs
+D:\PetProjects\CustomerService\CustomerService.Infrustructure\obj\Debug\net6.0\CustomerService.Infrustructure.csproj.CoreCompileInputs.cache
+D:\PetProjects\CustomerService\CustomerService.Infrustructure\obj\Debug\net6.0\CustomerService.Infrustructure.csproj.CopyComplete
+D:\PetProjects\CustomerService\CustomerService.Infrustructure\obj\Debug\net6.0\CustomerService.Infrustructure.dll
+D:\PetProjects\CustomerService\CustomerService.Infrustructure\obj\Debug\net6.0\refint\CustomerService.Infrustructure.dll
+D:\PetProjects\CustomerService\CustomerService.Infrustructure\obj\Debug\net6.0\CustomerService.Infrustructure.pdb
+D:\PetProjects\CustomerService\CustomerService.Infrustructure\obj\Debug\net6.0\ref\CustomerService.Infrustructure.dll

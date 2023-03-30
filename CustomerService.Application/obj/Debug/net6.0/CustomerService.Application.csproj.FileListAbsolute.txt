@@ -1,0 +1,15 @@
+D:\PetProjects\CustomerService\CustomerService.Application\bin\Debug\net6.0\CustomerService.Application.deps.json
+D:\PetProjects\CustomerService\CustomerService.Application\bin\Debug\net6.0\CustomerService.Application.dll
+D:\PetProjects\CustomerService\CustomerService.Application\bin\Debug\net6.0\CustomerService.Application.pdb
+D:\PetProjects\CustomerService\CustomerService.Application\bin\Debug\net6.0\CustomerService.Domain.dll
+D:\PetProjects\CustomerService\CustomerService.Application\bin\Debug\net6.0\CustomerService.Domain.pdb
+D:\PetProjects\CustomerService\CustomerService.Application\obj\Debug\net6.0\CustomerService.Application.csproj.AssemblyReference.cache
+D:\PetProjects\CustomerService\CustomerService.Application\obj\Debug\net6.0\CustomerService.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\PetProjects\CustomerService\CustomerService.Application\obj\Debug\net6.0\CustomerService.Application.AssemblyInfoInputs.cache
+D:\PetProjects\CustomerService\CustomerService.Application\obj\Debug\net6.0\CustomerService.Application.AssemblyInfo.cs
+D:\PetProjects\CustomerService\CustomerService.Application\obj\Debug\net6.0\CustomerService.Application.csproj.CoreCompileInputs.cache
+D:\PetProjects\CustomerService\CustomerService.Application\obj\Debug\net6.0\CustomerService.Application.csproj.CopyComplete
+D:\PetProjects\CustomerService\CustomerService.Application\obj\Debug\net6.0\CustomerService.Application.dll
+D:\PetProjects\CustomerService\CustomerService.Application\obj\Debug\net6.0\refint\CustomerService.Application.dll
+D:\PetProjects\CustomerService\CustomerService.Application\obj\Debug\net6.0\CustomerService.Application.pdb
+D:\PetProjects\CustomerService\CustomerService.Application\obj\Debug\net6.0\ref\CustomerService.Application.dll

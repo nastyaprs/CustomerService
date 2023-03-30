@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "FWgtG9vqTIQhrM5myyvDQNtQzjGdG2JKjNJyVbXkMCd7fb42pf1YTfYsgGUL1Ct/fOlcOh/ZchqiOfO9ALX2iw==",
+  "success": true,
+  "projectFilePath": "D:\\PetProjects\\CustomerService\\CustomerService.Application\\CustomerService.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MAGGIE\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
