@@ -1,4 +1,5 @@
 ﻿using CustomerService.Domain.Common.Models;
+using CustomerService.Domain.User.ValueObjects;
 
 namespace CustomerService.Domain.SupportRequest.ValueObjects
 {
@@ -15,6 +16,12 @@ namespace CustomerService.Domain.SupportRequest.ValueObjects
         {
             return new(Guid.NewGuid());
         }
+
+        public static SupportRequestId Create(string value)
+        {
+            return new(Guid.Parse(value));
+        }
+
         public override IEnumerable<object> GetEqualityComponents()
         {
             yield return Value;

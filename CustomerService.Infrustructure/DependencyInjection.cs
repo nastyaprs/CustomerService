@@ -18,6 +18,8 @@ namespace CustomerService.Infrustructure
             services.AddAuth(configuration);
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ISupportRequestRepository, SupportRequestRepository>();
+            services.AddScoped<ISupportRequestMessageRepository, SupportRequestMessageRepository>();
          
 
             return services;

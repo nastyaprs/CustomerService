@@ -22,7 +22,7 @@ namespace CustomerService.Domain.User
 
         private readonly List<SupportRequest.SupportRequest> _supportRequests = new();
 
-        public ICollection<SupportRequest.SupportRequest> SupportRequestMessages => _supportRequests.ToList();
+        public ICollection<SupportRequest.SupportRequest> SupportRequests => _supportRequests.ToList();
 
         private User(UserId id, 
             string firstName, 
@@ -42,7 +42,7 @@ namespace CustomerService.Domain.User
             UpdatedAt = updatedAt;
         }
 
-        public static User Create(UserId userId,
+        public static User Create(
             string firstName,
             string lastName,
             string email,

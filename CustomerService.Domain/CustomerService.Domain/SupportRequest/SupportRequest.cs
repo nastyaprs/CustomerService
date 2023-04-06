@@ -1,10 +1,17 @@
 ﻿using CustomerService.Domain.Common.Models;
 using CustomerService.Domain.SupportRequest.ValueObjects;
+using CustomerService.Domain.User.ValueObjects;
 
 namespace CustomerService.Domain.SupportRequest
 {
     public sealed class SupportRequest: AggregateRoot<SupportRequestId>
     {
+        public UserId CustomerId { get; set; }
+
+        public string IssueSubject { get; set; } = null!;
+
+        public string IssueType { get; set; } = null!;
+
         public string IssueDescription { get; set; } = null!;
 
         public string UrgencyLevel { get; set; } = null!;
@@ -17,58 +24,38 @@ namespace CustomerService.Domain.SupportRequest
 
         public string Status { get; set; } = null!;
 
-        public string StatusDetails { get; set; } = null!;
+        public string? StatusDetails { get; set; } = null!;
 
-        public string IssueType { get; set; } = null!;
-
-        public string IssueSubject { get; set; } = null!;
-
-        private SupportRequest(SupportRequestId id, 
-            string issueDescription,
-            string urgencyLevel,
-            DateTime dueDate,
-            DateTime createdAt,
-            DateTime updatedAt,
-            string status,
-            string statusDetails,
+        private SupportRequest(SupportRequestId id,
+            UserId customerId,
+            string issueSubject,
             string issueType,
-            string issueSubject) : base(id)
+            string issueDescription,
+            string urgencyLevel) : base(id)
         {
+            CustomerId = customerId;
+            IssueSubject = issueSubject;
+            IssueType = issueType;
             IssueDescription = issueDescription;
             UrgencyLevel = urgencyLevel;
-            DueDate = dueDate;
-            CreatedAt = createdAt;
-            UpdatedAt = updatedAt;
-            Status = status;
-            StatusDetails = statusDetails;
-            IssueType = issueType;
-            IssueSubject = issueSubject;
         }
 
         private readonly List<SupportRequestMessage.Entities.SupportRequestMessage> _supportRequestMessages = new();
 
         public ICollection<SupportRequestMessage.Entities.SupportRequestMessage> SupportRequestMessages => _supportRequestMessages.ToList();
 
-        public static SupportRequest Create(string issueDescription,
-            string urgencyLevel,
-            DateTime dueDate,
-            DateTime createdAt,
-            DateTime updatedAt,
-            string status,
-            string statusDetails,
+        public static SupportRequest Create(UserId customerId,
+            string issueSubject,
             string issueType,
-            string issueSubject)
+            string issueDescription,
+            string urgencyLevel)
         {
             return new(SupportRequestId.CreateUnique(),
-                issueDescription,
-                urgencyLevel,
-                dueDate,
-                createdAt,
-                updatedAt,
-                status,
-                statusDetails,
+                customerId,
+                issueSubject,
                 issueType,
-                issueSubject);
+                issueDescription,
+                urgencyLevel);
         }
     }
 }
