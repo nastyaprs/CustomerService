@@ -1,4 +1,5 @@
-﻿using CustomerService.Application.Common.Errors;
+﻿using CustomerService.Application.Common.Enums;
+using CustomerService.Application.Common.Errors;
 using CustomerService.Application.Common.Interfaces.Authentication;
 using CustomerService.Application.Common.Interfaces.Persistence;
 using CustomerService.Application.Common.Interfaces.Services;
@@ -34,7 +35,7 @@ namespace CustomerService.Application.Services.Authentication
                 lastName,
                 email,
                 password,
-                "Customer",
+                Role.Customer.ToString(),
                 _dateTimeProvider.UtcNow,
                 _dateTimeProvider.UtcNow);
 

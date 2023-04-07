@@ -9,7 +9,6 @@ namespace CustomerService.API.Controllers
 {
     [Route("user/{userId}/support_requests")]
     [ApiController]
-    [Authorize]
     public class SupportRequestsController : ControllerBase
     {
         private readonly ICreateSupportRequestService _createSupportRequestService;
@@ -26,6 +25,7 @@ namespace CustomerService.API.Controllers
         }
 
         [HttpPost("create")]
+        [Authorize(Roles = "Customer")]
         public async Task<IActionResult> CreateSupportRequest(
             CreateSupportRequestRequest request, 
             UrgencyLevel urgencyLevel,
@@ -51,6 +51,7 @@ namespace CustomerService.API.Controllers
         }
 
         [HttpGet("get_support_request/{requestId}")]
+        [Authorize(Roles = "Customer, Admin")]
         public async Task<IActionResult> GetSupportRequest([FromRoute]string requestId)
         {
             var supportRequest = await _getSupportRequestService.Get(requestId);
@@ -76,6 +77,7 @@ namespace CustomerService.API.Controllers
         }
 
         [HttpPost("update_status/{requestId}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateStatus([FromRoute]string requestId,
             UpdateSupportRequestStatusRequest request,
             Status status)

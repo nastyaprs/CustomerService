@@ -8,7 +8,6 @@ namespace CustomerService.API.Controllers
 {
     [Route("user/{userId}/supportRequest/{supportRequestId}/message")]
     [ApiController]
-    [Authorize]
     public class SupportRequestMessagesController : ControllerBase
     {
         private readonly ICreateSupportRequestMessageService _createSupportRequestMessageService;
@@ -19,6 +18,7 @@ namespace CustomerService.API.Controllers
         }
 
         [HttpPost("create")]
+        [Authorize(Roles = "Customer, Admin")]
         public async Task<IActionResult> Create(
             CreateSupportRequestMessageRequest request,
             [FromRoute]string supportRequestId,

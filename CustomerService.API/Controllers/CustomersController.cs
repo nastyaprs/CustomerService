@@ -1,6 +1,7 @@
 ﻿using CustomerService.Application.Services.Customers.GetCustomers;
 using CustomerService.Contracts.Customers;
 using CustomerService.Contracts.SupportRequests;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CustomerService.API.Controllers
@@ -17,6 +18,7 @@ namespace CustomerService.API.Controllers
         }
 
         [HttpGet("get_customers")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetCustomers(UrgencyLevel? urgencyLevel, Status? status)
         {
             var result = await _getCustomersService.GetCustomers(urgencyLevel.ToString(), status.ToString());
