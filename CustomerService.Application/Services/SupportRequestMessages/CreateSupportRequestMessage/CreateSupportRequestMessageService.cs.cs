@@ -1,31 +1,30 @@
 ﻿using CustomerService.Application.Common.Interfaces.Persistence;
 using CustomerService.Application.Common.Interfaces.Services;
-using CustomerService.Domain.SupportRequest.ValueObjects;
-using CustomerService.Domain.SupportRequestMessage.Entities;
+using CustomerService.Domain.Entities;
 
 namespace CustomerService.Application.Services.SupportRequestMessages.CreateSupportRequestMessage
 {
     public class CreateSupportRequestMessageService : ICreateSupportRequestMessageService
     {
         private readonly ISupportRequestMessageRepository _supportRequestMessageRepository;
-        private readonly IDateTimeProvider _dateTimeProvider;
+        private readonly IUserRepository _userRepository;
 
-        public CreateSupportRequestMessageService(
-            ISupportRequestMessageRepository supportRequestMessageRepository,
-            IDateTimeProvider dateTimeProvider)
+        public CreateSupportRequestMessageService(ISupportRequestMessageRepository supportRequestMessageRepository, 
+            IUserRepository userRepository)
         {
             _supportRequestMessageRepository = supportRequestMessageRepository;
-            _dateTimeProvider = dateTimeProvider;
+            _userRepository = userRepository;
         }
 
-        public async Task<CreateSupportRequestMessageResult> CreateMessage(string content, string supportRequestId, string createdBy)
+        public async Task<CreateSupportRequestMessageResult> CreateMessage(string content, long supportRequestId, long userId)
         {
-            
-            var message = SupportRequestMessage.Create(
-                SupportRequestId.Create(supportRequestId),
-                content,
-                _dateTimeProvider.UtcNow,
-                createdBy);
+            var user = await _userRepository.GetUserById(userId);
+
+            var message = new SupportRequestMessage {
+                Content = content,
+                CreatedBy = $"{user.FirstName} {user.LastName}",
+                SupportRequestId = supportRequestId
+            };
 
             
             await _supportRequestMessageRepository.Add(message);

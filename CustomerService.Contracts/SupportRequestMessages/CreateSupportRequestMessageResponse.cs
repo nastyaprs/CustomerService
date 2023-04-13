@@ -3,7 +3,7 @@
     public record CreateSupportRequestMessageResponse
     (
         string Content,
-        DateTime CreatedAt,
+        DateTime? CreatedAt,
         string CreatedBy
     );
 }

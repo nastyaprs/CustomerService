@@ -29,7 +29,7 @@ namespace CustomerService.API.Controllers
                 request.Password);
 
             var response = new AuthenticationResponse(
-                authResult.User.Id.Value,
+                authResult.User.Id,
                 authResult.User.FirstName,
                 authResult.User.LastName,
                 authResult.User.Email,
@@ -46,7 +46,7 @@ namespace CustomerService.API.Controllers
                 request.Password);
 
             var response = new AuthenticationResponse(
-                authResult.User.Id.Value,
+                authResult.User.Id,
                 authResult.User.FirstName,
                 authResult.User.LastName,
                 authResult.User.Email,

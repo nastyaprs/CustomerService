@@ -2,7 +2,9 @@ using CustomerService.API.Filters;
 using CustomerService.Application;
 using CustomerService.Infrustructure;
 using CustomerService.Infrustructure.Authentication;
+using CustomerService.Infrustructure.Persistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
@@ -77,4 +79,11 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetService<CustomerServiceDBContext>();
+    dbContext.Database.Migrate();
+}
+
 app.Run();

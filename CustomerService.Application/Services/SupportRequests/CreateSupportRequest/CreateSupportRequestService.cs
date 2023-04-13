@@ -1,8 +1,7 @@
 ﻿using CustomerService.Application.Common.Enums;
 using CustomerService.Application.Common.Interfaces.Persistence;
 using CustomerService.Application.Common.Interfaces.Services;
-using CustomerService.Domain.SupportRequest;
-using CustomerService.Domain.User.ValueObjects;
+using CustomerService.Domain.Entities;
 
 namespace CustomerService.Application.Services.SupportRequests.CreateSupportRequest
 {
@@ -19,23 +18,22 @@ namespace CustomerService.Application.Services.SupportRequests.CreateSupportRequ
         }
 
         public async Task<CreateSupportRequestResult> CreateSupportRequest(
-            string IssueSubject,
-            string IssueType,
-            string IssueDescription,
-            string UrgencyLevel, 
-            string customerId)
+            string issueSubject,
+            string issueType,
+            string issueDescription,
+            string urgencyLevel, 
+            long customerId)
         {
-            //create support request
-            var supportRequest = SupportRequest.Create(
-                UserId.Create(customerId),
-                IssueSubject,
-                IssueType,
-                IssueDescription,
-                UrgencyLevel);
+      
+            var supportRequest = new SupportRequest {
+                IssueSubject = issueSubject,
+                IssueType = issueType,
+                IssueDescription = issueDescription,
+                UrgencyLevel = urgencyLevel,
+                CustomerId = customerId
+            };
 
             supportRequest.Status = Status.NotDone.ToString(); 
-            supportRequest.CreatedAt = _dateTimeProvider.UtcNow;
-            supportRequest.UpdatedAt = _dateTimeProvider.UtcNow;
             
             if(supportRequest.UrgencyLevel == UrgencyLevelEnum.Low.ToString())
             {
@@ -50,13 +48,10 @@ namespace CustomerService.Application.Services.SupportRequests.CreateSupportRequ
                 supportRequest.DueDate = _dateTimeProvider.UtcNow.AddHours(4);
             }
 
-            //persist it
-            await _supportRequestRepository.Add(supportRequest);
 
-            //save changes to db
+            await _supportRequestRepository.AddSupportRequest(supportRequest);
 
-            //return support request response
-            return new CreateSupportRequestResult(supportRequest.Id.Value,
+            return new CreateSupportRequestResult(supportRequest.Id,
                 supportRequest.IssueSubject,
                 supportRequest.IssueType,
                 supportRequest.IssueDescription,

@@ -2,13 +2,13 @@
 {
     public record CreateSupportRequestResponse
     (
-        Guid Id,
+        long Id,
         string IssueSubject,
         string IssueType,
         string IssueDescription,
         string UrgencyLevel, 
         DateTime DueDate,
-        DateTime CreatedAt,
+        DateTime? CreatedAt,
         string Status
     );
 }

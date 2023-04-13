@@ -6,27 +6,20 @@ namespace CustomerService.Application.Services.SupportRequests.UpdateStatus
     public class UpdateSupportRequestStatusService : IUpdateSupportRequestStatusService
     {
         private readonly ISupportRequestRepository _supportRequestRepository;
-        private readonly IDateTimeProvider _dateTimeProvider;
 
-        public UpdateSupportRequestStatusService(ISupportRequestRepository supportRequestRepository,
-            IDateTimeProvider dateTimeProvider)
+        public UpdateSupportRequestStatusService(ISupportRequestRepository supportRequestRepository)
         {
             _supportRequestRepository = supportRequestRepository;
-            _dateTimeProvider = dateTimeProvider;
         }
 
-        public async Task UpdateStatus(string requestId, string status, string statusDetails)
+        public async Task UpdateStatus(long requestId, string status, string statusDetails)
         {
-            //get support request
-            var supportRequest = await _supportRequestRepository.Get(Guid.Parse(requestId));
+            var supportRequest = await _supportRequestRepository.GetSupportRequestById(requestId);
 
-            //update status
             supportRequest.Status = status;
             supportRequest.StatusDetails = statusDetails;
-            supportRequest.UpdatedAt = _dateTimeProvider.UtcNow;
 
-            //save changes to db
-
+            await _supportRequestRepository.SaveChangesAsync();
         }
     }
 }

@@ -2,6 +2,6 @@
 {
     public interface IUpdateSupportRequestStatusService
     {
-        Task UpdateStatus(string requestId, string status, string statusDetails);
+        Task UpdateStatus(long requestId, string status, string statusDetails);
     }
 }

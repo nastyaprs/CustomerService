@@ -1,4 +1,4 @@
-﻿using CustomerService.Domain.User;
+﻿using CustomerService.Domain.Entities;
 
 namespace CustomerService.Application.Common.Interfaces.Authentication
 {

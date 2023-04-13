@@ -36,7 +36,7 @@ namespace CustomerService.API.Controllers
                 request.IssueType,
                 request.IssueDescription,
                 urgencyLevel.ToString(),
-                userId);
+                Convert.ToInt64(userId));
 
             var response = new CreateSupportRequestResponse(supportRequest.Id,
                 supportRequest.IssueSubject,
@@ -54,7 +54,7 @@ namespace CustomerService.API.Controllers
         [Authorize(Roles = "Customer, Admin")]
         public async Task<IActionResult> GetSupportRequest([FromRoute]string requestId)
         {
-            var supportRequest = await _getSupportRequestService.Get(requestId);
+            var supportRequest = await _getSupportRequestService.Get(Convert.ToInt64(requestId));
 
             var response = new GetSupportRequestResponse(
                 supportRequest.IssueSubject,
@@ -76,13 +76,15 @@ namespace CustomerService.API.Controllers
             return Ok(response);
         }
 
-        [HttpPost("update_status/{requestId}")]
+        [HttpPut("update_status/{requestId}")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateStatus([FromRoute]string requestId,
             UpdateSupportRequestStatusRequest request,
             Status status)
         {
-            await _updateSupportRequestStatusService.UpdateStatus(requestId, status.ToString(), request.StatusDetails);
+            await _updateSupportRequestStatusService.UpdateStatus(Convert.ToInt64(requestId), 
+                status.ToString(), 
+                request.StatusDetails);
 
             return Ok("Status was successfully updated.");
         }

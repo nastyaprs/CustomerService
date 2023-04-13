@@ -26,8 +26,8 @@ namespace CustomerService.API.Controllers
         {
             var message = await _createSupportRequestMessageService.CreateMessage(
                 request.Content,
-                supportRequestId,
-                userId);
+                Convert.ToInt64(supportRequestId),
+                Convert.ToInt64(userId));
 
             var response = new CreateSupportRequestMessageResponse(
                 message.Content,

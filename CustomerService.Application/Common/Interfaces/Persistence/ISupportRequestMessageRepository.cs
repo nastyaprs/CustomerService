@@ -1,4 +1,4 @@
-﻿using CustomerService.Domain.SupportRequestMessage.Entities;
+﻿using CustomerService.Domain.Entities;
 
 namespace CustomerService.Application.Common.Interfaces.Persistence
 {

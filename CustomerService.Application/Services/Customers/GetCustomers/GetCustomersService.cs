@@ -1,6 +1,6 @@
 ﻿using CustomerService.Application.Common.Interfaces.Persistence;
 using CustomerService.Application.Services.SupportRequests.GetSupportRequest;
-using CustomerService.Domain.User;
+using CustomerService.Domain.Entities;
 
 namespace CustomerService.Application.Services.Customers.GetCustomers
 {
@@ -15,25 +15,20 @@ namespace CustomerService.Application.Services.Customers.GetCustomers
 
         public async Task<List<GetCustomerResult>> GetCustomers(string? urgencyLevel, string? status)
         {
-            //get from db list of customers
             var customers = await _userRepository.GetCustomers();
 
-            //return into a response model
             var response = MakeCustomersResponse(customers);
 
-            //filter by urgency level
-            if(urgencyLevel != null)
+            if(urgencyLevel != String.Empty)
             {
                 response = FilterByUrgencyLevel(response, urgencyLevel);
             }
 
-            //filter by status
-            if(status != null)
+            if(status != String.Empty)
             {
                 response = FilterByStatus(response, status);
             }
 
-            //return
             return response;
         }
 
@@ -72,34 +67,29 @@ namespace CustomerService.Application.Services.Customers.GetCustomers
 
         private List<GetCustomerResult> FilterByUrgencyLevel(List<GetCustomerResult> list, string urgencyLevel)
         {
-            foreach (var customer in list)
-            {
-                for (int i = 0; i < customer.GetSupportRequests.Count(); i++)
-                {
-                    if (customer.GetSupportRequests[i].UrgencyLevel != urgencyLevel)
-                    {
-                        customer.GetSupportRequests.Remove(customer.GetSupportRequests[i]);
-                    }
-                }
-            }
+            var data =  list
+                .Select(c => new GetCustomerResult(c.FirstName, c.LastName, c.Email,
+                c.GetSupportRequests.Where(r => r.UrgencyLevel == urgencyLevel)
+                .ToList()))
+                .ToList();
 
-            return list;
+            data.RemoveAll(c => c.GetSupportRequests.Count == 0);
+
+            return data;
         }
+
+
 
         private List<GetCustomerResult> FilterByStatus(List<GetCustomerResult> list, string status)
         {
-            foreach (var customer in list)
-            {
-                for (int i = 0; i < customer.GetSupportRequests.Count(); i++)
-                {
-                    if (customer.GetSupportRequests[i].Status != status)
-                    {
-                        customer.GetSupportRequests.Remove(customer.GetSupportRequests[i]);
-                    }
-                }
-            }
+            var data =  list.Select(c => new GetCustomerResult(c.FirstName, c.LastName,c.Email,
+                c.GetSupportRequests.Where(r => r.Status == status).ToList()
+            )).ToList();
 
-            return list;
+            data.RemoveAll(c => c.GetSupportRequests.Count == 0);
+
+            return data;
         }
+
     }
 }

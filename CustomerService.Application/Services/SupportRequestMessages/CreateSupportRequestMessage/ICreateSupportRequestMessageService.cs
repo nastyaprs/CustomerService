@@ -3,7 +3,7 @@
     public interface ICreateSupportRequestMessageService
     {
         Task<CreateSupportRequestMessageResult> CreateMessage(string content, 
-            string supportRequestId, 
-            string createdBy);
+            long supportRequestId, 
+            long userId);
     }
 }

@@ -3,7 +3,9 @@ using CustomerService.Application.Common.Interfaces.Persistence;
 using CustomerService.Application.Common.Interfaces.Services;
 using CustomerService.Infrustructure.Authentication;
 using CustomerService.Infrustructure.Persistence;
+using CustomerService.Infrustructure.Persistence.Repositories;
 using CustomerService.Infrustructure.Services;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -20,7 +22,18 @@ namespace CustomerService.Infrustructure
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ISupportRequestRepository, SupportRequestRepository>();
             services.AddScoped<ISupportRequestMessageRepository, SupportRequestMessageRepository>();
-         
+            services.AddDBContext(configuration);
+
+            return services;
+        }
+
+        public static IServiceCollection AddDBContext(this IServiceCollection services,
+            ConfigurationManager configuration)
+        {
+            services.AddDbContext<CustomerServiceDBContext>(options =>
+            {
+                options.UseNpgsql(configuration.GetConnectionString("CustomerServiceDB"));
+            });
 
             return services;
         }
@@ -30,7 +43,7 @@ namespace CustomerService.Infrustructure
         {
             services.Configure<JwtSettings>(configuration.GetSection(JwtSettings.SectionName));
             services.AddSingleton<IJwtTokenGenerator, JwtTokenGenerator>();
-
+            
             return services;
 
         }

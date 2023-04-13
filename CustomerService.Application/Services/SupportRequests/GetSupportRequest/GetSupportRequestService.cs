@@ -1,5 +1,4 @@
 ﻿using CustomerService.Application.Common.Interfaces.Persistence;
-using CustomerService.Domain.SupportRequest;
 
 namespace CustomerService.Application.Services.SupportRequests.GetSupportRequest
 {
@@ -12,9 +11,9 @@ namespace CustomerService.Application.Services.SupportRequests.GetSupportRequest
             _supportRequestRepository = supportRequestRepository;
         }
 
-        public async Task<GetSupportRequestResult> Get(string supportRequestId)
+        public async Task<GetSupportRequestResult> Get(long supportRequestId)
         {
-            var supportRequest = await _supportRequestRepository.Get(Guid.Parse(supportRequestId));
+            var supportRequest = await _supportRequestRepository.GetSupportRequestById(supportRequestId);
 
             var response = new GetSupportRequestResult(
                 supportRequest.IssueSubject,

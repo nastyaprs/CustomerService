@@ -15,3 +15,5 @@ D:\PetProjects\CustomerService\CustomerService.Infrustructure\obj\Debug\net6.0\C
 D:\PetProjects\CustomerService\CustomerService.Infrustructure\obj\Debug\net6.0\refint\CustomerService.Infrustructure.dll
 D:\PetProjects\CustomerService\CustomerService.Infrustructure\obj\Debug\net6.0\CustomerService.Infrustructure.pdb
 D:\PetProjects\CustomerService\CustomerService.Infrustructure\obj\Debug\net6.0\ref\CustomerService.Infrustructure.dll
+D:\PetProjects\CustomerService\CustomerService.Infrustructure\bin\Debug\net6.0\CustomerService.Infrustructure.runtimeconfig.json
+D:\PetProjects\CustomerService\CustomerService.Infrustructure\obj\Debug\net6.0\CustomerService.Infrustructure.genruntimeconfig.cache

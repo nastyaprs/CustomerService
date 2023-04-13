@@ -7,7 +7,7 @@
         string IssueDescription,
         string UrgencyLevel,
         DateTime DueDate,
-        DateTime CreatedAt,
+        DateTime? CreatedAt,
         DateTime? UpdatedAt,
         string Status,
         string StatusDetails,
@@ -17,7 +17,7 @@
     public record GetSupportRequestMessages
     (
         string Content,
-        DateTime CreatedAt,
+        DateTime? CreatedAt,
         string CreatedBy
     );
 }

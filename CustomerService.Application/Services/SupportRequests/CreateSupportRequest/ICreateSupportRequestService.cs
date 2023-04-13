@@ -7,6 +7,6 @@
             string IssueType,
             string IssueDescription,
             string UrgencyLevel,
-            string customerId);
+            long customerId);
     }
 }

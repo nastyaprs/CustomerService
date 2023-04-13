@@ -4,7 +4,7 @@ namespace CustomerService.Application.Services.SupportRequestMessages.CreateSupp
     public record CreateSupportRequestMessageResult
     (
         string Content,
-        DateTime CreatedAt,
+        DateTime? CreatedAt,
         string CreatedBy
     );
 }

@@ -2,7 +2,7 @@
 {
     public record AuthenticationResponse
     (
-        Guid Id,
+        long Id,
         string FirstName,
         string LastName,
         string Email,
