@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "0U9TUhIma5mucF0K2Sg6+t0CP3tbLi93Jm9yzQz2AvNueQCZb2LHMNZOoUwFr6wYCLYQOGpLOv9jsCCFOYKUzQ==",
+  "dgSpecHash": "kVmhC0AHRXM=",
   "success": true,
-  "projectFilePath": "D:\\PetProjects\\CustomerService\\CustomerService.Domain\\CustomerService.Domain\\CustomerService.Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/Users/anastasiiapryesnyakova/repos/CustomerService/CustomerService.Domain/CustomerService.Domain/CustomerService.Domain.csproj",
+  "expectedPackageFiles": [
+    "/Users/anastasiiapryesnyakova/.nuget/packages/microsoft.netcore.app.ref/6.0.36/microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
+    "/Users/anastasiiapryesnyakova/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.36/microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512"
+  ],
   "logs": []
 }

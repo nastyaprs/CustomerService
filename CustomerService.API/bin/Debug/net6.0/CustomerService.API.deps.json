@@ -517,17 +517,26 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
         },
         "runtime": {
-          "CustomerService.Application.dll": {}
+          "CustomerService.Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "CustomerService.Contracts/1.0.0": {
         "runtime": {
-          "CustomerService.Contracts.dll": {}
+          "CustomerService.Contracts.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "CustomerService.Domain/1.0.0": {
         "runtime": {
-          "CustomerService.Domain.dll": {}
+          "CustomerService.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "CustomerService.Infrustructure/1.0.0": {
@@ -541,7 +550,10 @@
           "System.IdentityModel.Tokens.Jwt": "6.26.1"
         },
         "runtime": {
-          "CustomerService.Infrustructure.dll": {}
+          "CustomerService.Infrustructure.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

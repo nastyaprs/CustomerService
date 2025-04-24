@@ -1,27 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PetProjects\\CustomerService\\CustomerService.Contracts\\CustomerService.Contracts.csproj": {}
+    "/Users/anastasiiapryesnyakova/repos/CustomerService/CustomerService.Contracts/CustomerService.Contracts.csproj": {}
   },
   "projects": {
-    "D:\\PetProjects\\CustomerService\\CustomerService.Contracts\\CustomerService.Contracts.csproj": {
+    "/Users/anastasiiapryesnyakova/repos/CustomerService/CustomerService.Contracts/CustomerService.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PetProjects\\CustomerService\\CustomerService.Contracts\\CustomerService.Contracts.csproj",
+        "projectUniqueName": "/Users/anastasiiapryesnyakova/repos/CustomerService/CustomerService.Contracts/CustomerService.Contracts.csproj",
         "projectName": "CustomerService.Contracts",
-        "projectPath": "D:\\PetProjects\\CustomerService\\CustomerService.Contracts\\CustomerService.Contracts.csproj",
-        "packagesPath": "C:\\Users\\MAGGIE\\.nuget\\packages\\",
-        "outputPath": "D:\\PetProjects\\CustomerService\\CustomerService.Contracts\\obj\\",
+        "projectPath": "/Users/anastasiiapryesnyakova/repos/CustomerService/CustomerService.Contracts/CustomerService.Contracts.csproj",
+        "packagesPath": "/Users/anastasiiapryesnyakova/.nuget/packages/",
+        "outputPath": "/Users/anastasiiapryesnyakova/repos/CustomerService/CustomerService.Contracts/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\MAGGIE\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/anastasiiapryesnyakova/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "/opt/homebrew/Cellar/dotnet/9.0.3/libexec/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,7 +33,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -50,12 +55,22 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.36, 6.0.36]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/9.0.3/libexec/sdk/9.0.104/RuntimeIdentifierGraph.json"
         }
       }
     }
